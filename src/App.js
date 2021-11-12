@@ -1,15 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from 'react';
-import Greeting from './components/Greeting';
+import Ciao from './components/Ciao';
 
 
-function App() {
-  return <React.Fragment>
-    <Greeting word='first' name='Name'/>  
-    <Greeting word='two' name='Name2'/>  
-  </React.Fragment>
-  ;
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      fname:'Cubert',
+      sname:'Marshal'
+    }
+  }
+  // const user = ;
+  render(){
+    const {fname, sname} = this.state;
+    return<>
+    <Ciao name={`${fname} ${sname}`}/>  
+    <Ciao name='PewPew'/>  
+    <Ciao name='Horse'/>
+    </>;
+  }
+  
 }
 
 export default App;
