@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from 'react';
-import SingInForm from './components/SingInForm';
+import CiaoSection from './components/CiaoSection';
 
 
 
@@ -11,7 +11,7 @@ class App extends React.Component{
  render(){
  
   return <>   
-  <SingInForm/>    
+  <CiaoSection/>    
   </>
  }
  

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import UserCard from './User';
-
+import UserCard from './UserCard';
+import PropTypes from 'prop-types';
 
 class UsersList extends Component {
   
@@ -28,5 +28,7 @@ class UsersList extends Component {
     );
   }
 }
-
+UsersList.propTypes={
+  users:PropTypes.arrayOf.isRequired(PropTypes.number),
+}
 export default UsersList;
