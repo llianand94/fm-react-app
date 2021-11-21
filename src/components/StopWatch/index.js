@@ -13,7 +13,7 @@ class StopWatch extends Component {
 
   start = ()=>{
     if(this.intervalId===null){
-      this.intervalId = setInterval(this.tick,1000);
+      this.intervalId = setTimeout(this.tick,1000);
     }
   }
 
@@ -32,6 +32,9 @@ class StopWatch extends Component {
   }
 
   componentDidUpdate(){
+    if(this.intervalId!==null){
+    this.intervalId = setTimeout(this.tick,1000);
+    }
   }
 
   componentWillUnmount(){
@@ -39,6 +42,7 @@ class StopWatch extends Component {
   }
 
   render() {
+    console.log(this.intervalId)
     const {count} = this.state;
     return (
       <article>
