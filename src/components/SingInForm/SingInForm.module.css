@@ -1,3 +1,6 @@
+@import './../../common/styles/_breakpoints.scss';
+@import './../../common/styles/_templates.scss';
+
 .container{
 display: flex;
 flex-direction: column;

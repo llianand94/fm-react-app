@@ -1,0 +1,22 @@
+@import './../../../common/styles/breakpoints';
+@import './../../../common/styles/templates';
+
+.container{
+  max-width: 90px;
+  background-color: pink;
+  @extend %one-line;
+  @media screen and (min-width:$sm) {
+    background-color: aqua;
+    
+  }
+}
+.btn{
+  max-width: 40px;
+  border: blueviolet 3px solid;
+  @extend %one-line;
+  @media screen and (min-width:$sm) {
+    border:{
+      color:rgb(141, 127, 155)
+    };
+  }
+}
