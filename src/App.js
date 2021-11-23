@@ -1,23 +1,16 @@
 
 import './App.css';
 import React from 'react';
-import Calendar from './components/Calendar';
-import Ciao from './components/CiaoSection/Ciao';
+import UserLoader from './components/UserLoader';
 
 
 
 
 
-class App extends React.Component{
-  
- render(){
- 
+function App(){
   return <>   
-  <Calendar/>
-  <Ciao id={1} name='easy'/>    
-  </>
- }
- 
+    <UserLoader/>
+ </>
 }   
   
 export default App;
