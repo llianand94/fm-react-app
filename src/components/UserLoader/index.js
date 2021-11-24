@@ -12,12 +12,13 @@ class UsersLoader extends Component {
       isFetching: false,
       isError: false,
       currentPage: 1,
+      
     }
   }
 
   load = () => {
     const {currentPage:page} = this.state;
-    getUsers({page,res:3})
+    getUsers({page,results:3})
       .then((data)=>{
       if(data.error){
         return this.setState({
