@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getUsers } from '../../api';
+import Spinner from './Spinner';
 
 
 class UsersLoader extends Component {
@@ -12,15 +13,21 @@ class UsersLoader extends Component {
       isError: false,
       currentPage: 1,
     }
-
   }
 
   load = () => {
-    const {currentPage} = this.state;
-    getUsers(currentPage)
-      .then((data)=>this.setState({
-        users:data.results,
-      }))
+    const {currentPage:page} = this.state;
+    getUsers({page,res:3})
+      .then((data)=>{
+      if(data.error){
+        return this.setState({
+          isError: true
+        })
+      }
+        return this.setState({
+          users:data.results,
+        })
+      })
       .catch(()=>this.setState({
         isError: true
       }))
@@ -49,9 +56,11 @@ class UsersLoader extends Component {
       );
     }
   }
-  nextPage = () => this.setState((state,props)=>
-  ({currentPage:state.currentPage+1}));
+  nextPage = () => this.setState((state,props)=>({currentPage:state.currentPage+1}));
 
+  createUser= (user) => <li key={user.login.uuid}>{JSON.stringify(user,null, 7)}</li>
+    
+  
   render() {
     const {users, isFetching, isError, currentPage} = this.state;
     // if(isError){
@@ -62,15 +71,13 @@ class UsersLoader extends Component {
     // } ниже тоже самое
     return <div>
       {isError && <div>Error</div>}
-      {isFetching && <div>Loading...</div>}
+      {isFetching && <div><Spinner/></div>}
       <h2>Users list</h2>
       <button onClick={this.prevPage}>&lt;</button>
       <button onClick={this.nextPage}>&gt;</button>
       <p>current page: {currentPage}</p>
       <ul>
-        {users.map((user)=>(
-          <li key={user.login.uuid}>{JSON.stringify(user,null, 7)}</li>
-        ))}
+        {users.map(this.createUser)}
       </ul>
     </div>;
 
