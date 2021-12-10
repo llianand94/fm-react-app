@@ -1,12 +1,13 @@
 import './App.css';
 import React from 'react';
-import UserSection from './components/UserSection';
+
+import Chat from './components/Chat';
 
 
 
 function App(){
   return <>
-  <UserSection/>
+  <Chat/>
   </>
   
 }

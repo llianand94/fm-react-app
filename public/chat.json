@@ -1,0 +1,46 @@
+{
+  "authors": [
+    {
+      "id": 1,
+      "name": "Empty",
+      "avatar": "logo.img"
+    },
+    {
+      "id": 2,
+      "name": "Pewpew",
+      "avatar": "logo.img"
+    },
+    {
+      "id": 3,
+      "name": "Mean",
+      "avatar": "logo.img"
+    }
+  ],  
+    "messages": [
+    {
+      "id": 1,
+      "text": "firrst mesg",
+      "authorId": 2
+    },
+    {
+      "id": 2,
+      "text": "aSDdd mesg",
+      "authorId": 1
+    },
+    {
+      "id": 3,
+      "text": "firaddDD! mesg",
+      "authorId": 3
+    },
+    {
+      "id": 4,
+      "text": "Sugges mesg",
+      "authorId": 1
+    },
+    {
+      "id": 5,
+      "text": "Another  mesg",
+      "authorId": 1
+    }
+  ]
+}
